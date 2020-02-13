@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "global": "^4.4.0",
+    "jshint": "^2.11.0"
+  }
+}
