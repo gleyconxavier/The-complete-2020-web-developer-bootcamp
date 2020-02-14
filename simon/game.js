@@ -1,3 +1,4 @@
+// jshint esversion:6
 const buttonColours = ["red", "blue", "green", "yellow"];
 
 let gamePattern = [];
