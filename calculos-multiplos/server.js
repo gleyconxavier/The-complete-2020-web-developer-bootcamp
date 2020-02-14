@@ -34,5 +34,5 @@ app.post("/", (req, res) => {
 const port = 3000 || '' ;
 
 app.listen(port, function() {
-    console.log("Server started on: https://localhost:" + port);
+    console.log("Server started on: http://localhost:" + port);
 });
