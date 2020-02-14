@@ -18,7 +18,7 @@
 
 "npm run dev" - Iniciar em modo de desenvolvimento(Necessário Nodemon).
 
-##Configurar o arquivo .env com as seguintes variáveis:
+## Configurar o arquivo .env com as seguintes variáveis:
 
 - MAILCHIMP_KEY | Sua chave da API do _MailChimp_.
 
