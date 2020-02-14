@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It's a <%= kindOfDay %> </title>
+    <title>Lista de afazeres</title>
 </head>
 <body>
-    <h1><%= kindOfDay %></h1>
+
+    <h1> <%= kindOfDay %> </h1>
+    <ul>
+        <% newListItems.forEach(item => { %>
+            <li><%= item  %></li>
+        <% }) %>
+    </ul>
+
+    <form class="" action="/" method="post">
+        <input type="text" name="newItem" title="Tarefa para adicionar.">
+
+        <button type="submit" name="button" title="Adicionar">Adicionar</button>
+    </form>
+
 </body>
 </html>
