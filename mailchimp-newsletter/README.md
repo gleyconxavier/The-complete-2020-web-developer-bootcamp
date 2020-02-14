@@ -18,3 +18,9 @@ Configurar o arquivo .env com as seguintes variáveis:
 -MAILCHIMP_KEY | Sua chave da API do MailChimp.
 -AUDIENCE_ID | ID do audience que conterá as inscrições.
 -SV_NUMBER | Número do seu servidor, este número se encontra no final da chave da API (us-xx).
+
+# Opcionais e demais configurações
+
+Os campos que são capturados se encontram em app.js, entre as linhas 25~28, é possível utilizar outras condições e capturar um número maior de campos personalizados, basta que configure os campos corretamente no MailChimp e posteriormente adicione a aplicação, recomendo fortemente a leitura no MailChimp para um melhor manuseio:
+
+https://mailchimp.com/developer/reference/lists/list-merges/
