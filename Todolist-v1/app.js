@@ -13,8 +13,7 @@ app.use(express.static(__dirname+"/public"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-    
-    console.log(date);
+
     const day = date.getDate();
 
     res.render("list", {listTitle: day, newListItems: items});
