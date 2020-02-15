@@ -2,31 +2,49 @@
 
 const express = require("express");
 const app = express();
+const date = require(__dirname+"/date.js");
 
-let items = ["Comprar comida", "Comprar software", "Comprar hardware"];
+const items = ["Comprar comida", "Comprar software", "Comprar hardware"];
+const workItems = [];
 
 app.use(express.urlencoded({extended:true}));
+app.use(express.static(__dirname+"/public"));
 
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-    let today = new Date();
+    
+    console.log(date);
+    const day = date.getDate();
 
-    var options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-
-    var day = today.toLocaleDateString("pt-BR", options);
-
-    res.render("list", {kindOfDay: day, newListItems: items});
+    res.render("list", {listTitle: day, newListItems: items});
 });
 
 app.post("/", (req, res) => {
     item = req.body.newItem;
-    items.push(item);
-    res.redirect("/");
+
+    if(req.body.list === "Work") {
+        workItems.push(item);
+        res.redirect("/work");
+    } else {
+        items.push(item);
+        res.redirect("/");
+    }
+
+});
+
+app.get("/work", (req, res) => {
+    res.render("list", {listTitle: "Lista de trabalho", newListItems: workItems});
+});
+
+app.post("/work", (req, res) => {
+    const item = req.body.newItem;
+    workItems.push(item);
+    res.redirect("/work");
+});
+
+app.get("/about", (req, res) => {
+    res.render("about");
 });
 
 const port = 3000 || '';
