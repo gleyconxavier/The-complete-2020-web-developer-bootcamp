@@ -55,7 +55,7 @@ app.get("/", (req, res) => {
       res.redirect("/");
     } else {
       res.render("list", {listTitle: "Hoje",newListItems: foundItems});
-    };
+    }
   });
 });
 
