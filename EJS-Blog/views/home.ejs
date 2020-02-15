@@ -7,7 +7,8 @@
      <a href=<%= "post/"+post.title %> >
          <h1><%= post.title %></h1>
     </a>
-     <p><%= post.body %></p>
+     <p><%= post.body.substring(0, 280) %>...</p>
+     <a title="Ir para postagem" href=<%= "post/"+post.title %>>Saiba mais</a>
     <% }) %>
 
 <%- include("partials/footer") -%>
